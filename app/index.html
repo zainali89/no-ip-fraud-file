@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="client">
+<head>
+	<!-- stage test -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- inject:css -->
+	<link rel="stylesheet" href="//cdn2.noipfraud.com/app_1.8.css">
+	<!-- endinject -->
+</head>
+<body ng-controller="InitCtrl" ng-cloak>
+
+	<!--[if lt IE 8]>
+		<p>You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+	<div class="container-fluid">
+		<div class="row vspace-20px">
+			<div class="col-md-12">
+				<div ng-if="criticalAlert" class="alert alert-danger text-center">{{criticalAlert}}</div>
+				<div ui-view></div>
+			</div>
+		</div>
+	</div>
+	
+	<footer ng-if="state.current.name!='login'" class="text-muted footer">&copy; <a ng-href="{{config.product.url}}" target="_BLANK">{{config.product.name}}</a> <strong>UTC</strong> {{getDate() | date: 'HH:mm' : 'UTC'}} (local {{getDate() | date: 'Z'}})</span></footer>
+
+	<!-- native:js -->
+	<!-- endinject -->
+	<!-- inject:js -->
+	<script src="//cdn2.noipfraud.com/app_1.8.js"></script>
+	<!-- endinject -->
+</body>
+</html>
